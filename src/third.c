@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX_PERSONS_COUNT 100
 
@@ -66,6 +67,16 @@ void fillPersons(struct Person persons[], FILE *source)
     persons[personInd+1].name[0] = 0;
 }
 
+void swapPersons(struct Person persons, x, y) {
+    struct Person temp;
+    temp = persons[x];
+    persons[x] = persons[y]
+    persons[y] = temp;
+}
+
+bool comparePerson(struct Person *p1, struct Person *p2) {
+    return strcmp(p1->name, p2->name);
+}
 
 int main(int argc, char *argv[])
 {
